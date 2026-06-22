@@ -7,6 +7,16 @@ and honest final reporting.
 The first version is deliberately manual. It prepares a tiny repo task, lets a
 human or coding agent perform the task, then scores the resulting worktree.
 
+## Quick Start
+
+```bash
+python3 prepare.py dirty_worktree_preservation baseline
+python3 score.py dirty_worktree_preservation baseline
+```
+
+The first score before an agent performs the task should be low. That is the
+baseline state of the prepared task, not a failure of the harness.
+
 ## Why This Structure
 
 This repo uses a hybrid structure:
@@ -85,4 +95,3 @@ same case -> same prompt -> same seed repo -> different scaffold -> compare scor
 
 If a scaffold change improves the score without unacceptable cost or new
 violations, keep it. Otherwise discard it.
-
